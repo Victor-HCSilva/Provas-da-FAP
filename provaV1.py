@@ -1,31 +1,3 @@
-#2 tabelinhas, tabela de cadastro | movimentação, data, numero da conta, tipo de operação "Deposito",  "saque",  "conta criada ", "conta deletada"
-
-#menu: cadastrar, deposito, saque, listar,apagar
-#Novas contas , movimentações de contas 
-#numero, nome, data, tipo, saldo  <<<------------ cadastro
-#contas(lista de dicionários) -->> [{}]
-
-#qual a conta a depositar? mostrar o id para ver se existe, se existir qual o valor para ser depositado
-#Seguindo  (o saldo atual) - (o que foi depositado).
-#saque --->> há limite de pedido (R$1000), verificar se há saque 
-#Extrato -->> ver o saldo da conta
-
-
-
-'''
-PARA VOCÊ (2024-08-23)!!!!
-
-consertar a pesquisa de todos para que possam retornar tudo corretamente, 
-não está nada sendo salvo. é possível colocar as operações em menos funções
-apenas dependendo do tipo de operação[deixaria o código mais compacto], ademais 
-as funcionalidades estão funcionando bém. Falta: deleção, tipos de conta, tratamnetos 
-de erro, e salvamento de dados e operações [vide a nomeclatura adotada para tal].
-E pode adicionar o que quiser a mais para ter o bonus do plus+++
-
-'''
-
-
-
 
 def _movimentacao_(data, numero_conta, tipo_de_operacao):
 
