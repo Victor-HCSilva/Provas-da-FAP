@@ -43,7 +43,7 @@ def escolha():
             print('Opção inválida')
 
 def menu():
-    data = '2024-08-23'#data que será salva nas movimentações
+    data = '2024-08-28'#data que será salva nas movimentações
     cadastro=[]
     try:
         movimentacao = True
@@ -53,28 +53,28 @@ def menu():
             operacao = escolha()
             
             if operacao == '1':
-
+                tipo_de_operacao='NC'#E = extrato, D=depositar,NC=nova conta,AC=apagar conta, S= sacar,
                 novo_usuario = {
-                    'tipo':'conta-corrente',#por enquanto
-                    'numero': 1,#input("Insira o número"),#id
-                    'nome':'Teste da silva ',#input("Insira seu nome: "),
-                    'data' :'2024-08-23',# input("Insira a data: "),
+                    'tipo':'conta-corrente',
+                    'numero': int(input("Insira o número")),#id
+                    'nome':input("Insira seu nome: "),
+                    'data' :input("Insira a data: "),
                     'saldo': 0,
                 }
                 
-                novo_usuario2 = {
+                '''novo_usuario2 = {
                     'tipo':'conta-corrente',#por enquanto
                     'numero': 2,#input("Insira o número"),#id
                     'nome':'Teste da silva ',#input("Insira seu nome: "),
                     'data' :'2024-08-23',# input("Insira a data: "),
                     'saldo': 0,
                 }
-                
-                cadastrar_conta(novo_usuario['numero'],novo_usuario['tipo'], novo_usuario['nome'], novo_usuario['data'], novo_usuario['saldo'])
-                cadastrar_conta(novo_usuario2['numero'],novo_usuario2['tipo'], novo_usuario2['nome'], novo_usuario2['data'], novo_usuario2['saldo'])
+                '''
+                cadastrar_conta(novo_usuario['numero'],novo_usuario['tipo'], novo_usuario['nome'], novo_usuario['data'], novo_usuario["saldo"])
+                #cadastrar_conta(novo_usuario2['numero'],novo_usuario2['tipo'], novo_usuario2['nome'], novo_usuario2['data'], novo_usuario2["saldo"])
                 cadastro.append(novo_usuario)#add novo usuario
-                cadastro.append(novo_usuario2)#add novo usuario
-                tipo_de_operacao='NC'#E = extrato, D=depositar,NC=nova conta,AC=apagar conta, S= sacar,
+                #cadastro.append(novo_usuario2)#add novo usuario
+                
                 
             #depositar
             
@@ -91,12 +91,12 @@ def menu():
                     _movimentacao_(data, numero_conta, tipo_de_operacao)   
                      
                     for s in range(len(dados)):
-                        print(f'Comparações: {dados[s]['numero']} e {numero_conta}')
+                        print(f'Comparações: {dados[s]["numero"]} e {numero_conta}')
                         
-                        if dados[s]['numero'] == numero_conta:
-                            dados[s]['saldo']+=deposito
+                        if dados[s]["numero"] == numero_conta:
+                            dados[s]["saldo"]+=deposito
                             
-                            print(f'Saldo atual: {dados[s]['saldo']}')
+                            print(f'Saldo atual: {dados[s]["saldo"]}')
                             msg='Encontrado!'
                             break
                         else:
@@ -114,14 +114,14 @@ def menu():
                     dados = cadastro
                     _movimentacao_(data, numero_conta, tipo_de_operacao)
                     for s in range(len(dados)):
-                        print(f'Comparações: {dados[s]['numero']} e {numero_conta}')
+                        print(f'Comparações: {dados[s]["numero"]} e {numero_conta}')
                         
-                        if dados[s]['numero'] == numero_conta:
+                        if dados[s]["numero"] == numero_conta:
                             msg=('Encontrado')
                             
-                            if (dados[s]['saldo']- saque_quantidade) >= 0:
-                                dados[s]['saldo']-= saque_quantidade
-                                print(f'Saldo atual: {dados[s]['saldo']}')
+                            if (dados[s]["saldo"]- saque_quantidade) >= 0:
+                                dados[s]["saldo"]-= saque_quantidade
+                                print(f'Saldo atual: {dados[s]["saldo"]}')
                                 break
                             else:
                                 msg='Encontrado, pórem a ação não pode ser feita'
@@ -145,9 +145,9 @@ def menu():
                     _movimentacao_(data, numero_conta, tipo_de_operacao)
                     
                     for s in range(len(dados)):
-                        print(f'Comparações: {dados[s]['numero']} e {numero_conta}')
+                        print(f'Comparações: {dados[s]["numero"]} e {numero_conta}')
                         
-                        if dados[s]['numero'] == numero_conta:
+                        if dados[s]["numero"] == numero_conta:
                             print(dados[s])
                             msg='Encontrado!'
                             break
@@ -169,9 +169,9 @@ def menu():
                     _movimentacao_(data, numero_conta, tipo_de_operacao)
                     
                     for s in range(len(dados)):
-                        print(f'Comparações: {dados[s]['numero']} e {numero_conta}')
+                        print(f'Comparações: {dados[s]["numero"]} e {numero_conta}')
                         
-                        if dados[s]['numero'] == numero_conta:
+                        if dados[s]["numero"] == numero_conta:
                             msg='Deletado!'
                             dados.remove(dados[s])
                             break
