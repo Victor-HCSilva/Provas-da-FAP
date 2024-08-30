@@ -27,7 +27,7 @@ da tabela "banco". As tabelas usadas estão no começo do código.
 
 ------FUNÇÕES:------
 
- - FUNÇÕES AUXILIARES( "conexao ao banco" e "mostrar_id"):
+ - FUNÇÕES AUXILIARES( "conexao_ao_banco" e "mostrar_id"):
 
 retorna uma conexão ao banco para facilitar a consulta em todas 
 as outras funções, é uma função auxiliar. Juntamente a função "mostra_id"
