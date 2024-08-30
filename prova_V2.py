@@ -2,6 +2,26 @@ from datetime import datetime
 from _funcoes_ import mostrar_id
 import  mysql.connector
 
+tabelas = '''
+        create database BANCO_PROVA_FAP_v3;
+        use BANCO_PROVA_FAP_v3;
+        
+        create table if not exists banco (
+            id_cliente INT AUTO_INCREMENT ,
+            numero_da_conta int not null,
+            nome varchar(100) not null,
+            tipo_de_conta text not null,
+            _data_ date not null,
+            saldo decimal(65,2) not null ,
+            PRIMARY KEY(id_cliente)
+        );
+        create table if not exists movimentacoes (
+                id_cliente INT not null,
+                tipo_de_operacao varchar(2) not null,
+                _data_ date not null,
+                saldo decimal(65,2) not null
+                );
+        '''
 
 def conexao_ao_banco():
     try:
