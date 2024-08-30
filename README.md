@@ -27,19 +27,19 @@ da tabela "banco". As tabelas usadas estão no começo do código.
 
 ------FUNÇÕES:------
 
- -FUNÇÕES AUXILIARES( "conexao ao banco" e "mostrar_id"):
+ - FUNÇÕES AUXILIARES( "conexao ao banco" e "mostrar_id"):
 
 retorna uma conexão ao banco para facilitar a consulta em todas 
 as outras funções, é uma função auxiliar. Juntamente a função "mostra_id"
 retorna o id (id_cliente) do cliente/usuário, que é muito usado no código
 para gerar uma segurança em relação às consultas no banco de dados.
 
- -ALTERAÇÕES( "mudanca"):
+ - ALTERAÇÕES( "mudanca"):
 
 serve para mudar mudar o nome ou número da conta, não
 é possível mudar o id pois ele é unico para cada pessoa cadastrada.
 
--EXIBIR EXTRATO  ( "extrato"):
+- EXIBIR EXTRATO  ( "extrato"):
 
 Serve para exibir o extrato, ao chamar a função ela mostrar tudo sobre
 a conta desde a ciação até as transações feitas.
@@ -52,7 +52,7 @@ automaticamente pela biblioteca datetime (from datetime import
 datetime, data=str(datetime.now())), e po fim o número correspondente
 a conta tem que ser digitado.
 
--DEPOSITAR DINHEIRO ( "depositar"):
+- DEPOSITAR DINHEIRO ( "depositar"):
 
 Apenas faz uma consulta para somar o saldo existente nas tabelas.
 
@@ -60,7 +60,7 @@ Apenas faz uma consulta para somar o saldo existente nas tabelas.
 
 Apenas consulta a tabela e retira o valor digitado.
 
- -APAGAR CONTA ("deletar"):
+ - APAGAR CONTA ("deletar"):
 
 Deleta uma conta, dá o seguinte comando:
 DELETE FROM banco WHERE numero conta = ? and nome = ?
