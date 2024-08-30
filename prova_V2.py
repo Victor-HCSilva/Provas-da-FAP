@@ -301,7 +301,7 @@ while True:
         tipo_de_operacao = 'D'
         depositar(numero_da_conta,valor)
         #MOVIMENTACOES.append(numero_da_conta,tipo_de_operacao,DATA,saldo)
-        salvar_movimentacoes(tipo_de_operacao=tipo_de_operacao,_data_=DATA,id=mostrar_id(numero_da_conta=numero_da_conta,opcao='2'),saldo=mostrar_id(numero_da_conta=numero_da_conta,opcao='2'))
+        salvar_movimentacoes(tipo_de_operacao=tipo_de_operacao,_data_=DATA,id=mostrar_id(numero_da_conta=numero_da_conta,opcao='2'),saldo=mostrar_id(numero_da_conta=numero_da_conta,opcao='1'))
     #SACAR
     elif opcao=='3':
         
@@ -313,7 +313,7 @@ while True:
             pass
             sacar(numero_da_conta=numero_da_conta,valor=valor)
             #MOVIMENTACOES.append(numero_da_conta,tipo_de_operacao,DATA,saldo)
-            salvar_movimentacoes(tipo_de_operacao=tipo_de_operacao,_data_=DATA,id=mostrar_id(numero_da_conta=numero_da_conta,opcao='2'),saldo=mostrar_id(numero_da_conta=numero_da_conta,opcao='2'))
+            salvar_movimentacoes(tipo_de_operacao=tipo_de_operacao,_data_=DATA,id=mostrar_id(numero_da_conta=numero_da_conta,opcao='2'),saldo=mostrar_id(numero_da_conta=numero_da_conta,opcao='1'))
     #extrat
     elif opcao=='4':
         numero_da_conta = int(input('Numero da conta: '))
