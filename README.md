@@ -8,7 +8,7 @@ movimentações é grava em um arquivo texto as operações do usuário como cad
 deleção (D), extrato(E). O restante é apenas manipulação de lista de dicionários. Em breve mais.(2024-08-28)
 
 
-***versão 2, final***
+***VERSÃO 2, FINAL***
 
 
 ----SOBRE  O QUE É O CÓDIGO:-----
