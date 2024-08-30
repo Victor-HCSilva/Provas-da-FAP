@@ -19,7 +19,7 @@ salvos no Mysql (usando a biblioteca mysql.connector).
 
 TABELAS MySQL:
 existem duas tabelas que previamente são necessárias a tabela "banco"
-e "movimentações", onde a tabela banco guarda:  nome, saldo,
+e "movimentacoes", onde a tabela banco guarda:  nome, saldo,
 data, id, e numero da  conta. A tabela "movimentacoes" salva apenas
 data, saldo e transações: (saldo, depósito), respectivamente "S" para
 saldo e "D" para depósito. o id da tabela "movimentacoes" e o mesmo 
