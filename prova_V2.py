@@ -1,7 +1,6 @@
 from datetime import datetime
-from _funcoes_ import mostrar_id
 import  mysql.connector
-
+#tabelas usadas
 tabelas = '''
         create database BANCO_PROVA_FAP_v3;
         use BANCO_PROVA_FAP_v3;
@@ -23,13 +22,42 @@ tabelas = '''
                 );
         '''
 
+def mostrar_id(opcao, numero_da_conta):  # 1 retorna saldo, 2 retorna id
+    try:
+        opcao = str(opcao)
+        numero_da_conta = str(numero_da_conta)
+        conexao = conexao_ao_banco()
+        
+        with conexao.cursor() as cursor:
+            consulta_sql = "SELECT * FROM banco WHERE numero_da_conta = %s;"
+            cursor.execute(consulta_sql, (numero_da_conta,))
+            
+            resultado = cursor.fetchall()  # Armazena o resultado da consulta
+
+            if resultado:
+                if opcao == '1':  
+                    return str(resultado[0][5])  # Retorna o saldo (coluna 5)
+                elif opcao == '2':  
+                    return str(resultado[0][0])  # Retorna o ID (coluna 0)
+            else:
+                print('Não encontrado')
+        
+    except Exception as erro:
+        print(f'Erro ao retornar dados: {erro}') 
+    
+    finally:
+        if conexao and conexao.is_connected():
+            conexao.close()
+ 
+
+
 def conexao_ao_banco():
     try:
         conexao = mysql.connector.connect(
                 host='localhost',
-                database='database',
-                user='root',
-                password='password'
+                database='seu banco',
+                user='seu nome de usario',
+                password='sua senha'
             )
     
         return conexao
@@ -238,9 +266,6 @@ def salvar_movimentacoes(tipo_de_operacao, _data_, saldo,id):
     finally:
         if conexao.is_connected():
             conexao.close()
-
-
-
 
 while True:
     DATA = str(datetime.now())
