@@ -21,8 +21,8 @@ TABELAS MySQL:
 existem duas tabelas que previamente são necessárias a tabela "banco"
 e "movimentacoes", onde a tabela banco guarda:  nome, saldo,
 data, id, e numero da  conta. A tabela "movimentacoes" salva apenas
-data, saldo e transações: (saldo, depósito), respectivamente "S" para
-saldo e "D" para depósito. o id da tabela "movimentacoes" e o mesmo 
+id, data, saldo e transações: (saldo, depósito), respectivamente "S" para
+saldo e "D" para depósito. o id da tabela "movimentacoes" é o mesmo 
 da tabela "banco". As tabelas usadas estão no começo do código.
 
 ------FUNÇÕES:------
@@ -42,13 +42,13 @@ serve para mudar mudar o nome ou número da conta, não
 - EXIBIR EXTRATO  ( "extrato"):
 
 Serve para exibir o extrato, ao chamar a função ela mostrar tudo sobre
-a conta desde a ciação até as transações feitas.
+a conta desde a data  deciação até as transações feitas.
 
 - CRIAR UMA CONTA ("criar_conta"):
 
 Cria uma conta nova, ou seja faz uma consulta e insere uma nova
 pessoa de id auto-incrementado  de saldo zero, a data é colocada
-automaticamente pela biblioteca datetime (from datetime import 
+automaticamente usando a biblioteca datetime (from datetime import 
 datetime, data=str(datetime.now())), e po fim o número correspondente
 a conta tem que ser digitado.
 
@@ -58,20 +58,20 @@ Apenas faz uma consulta para somar o saldo existente nas tabelas.
 
 - SACAR DINHEIRO ("sacar"):
 
-Apenas consulta a tabela e retira o valor digitado.
+Apenas consulta a tabela e retira o valor digitado/exigido.
 
  - APAGAR CONTA ("deletar"):
 
-Deleta uma conta, dá o seguinte comando:
+Deleta uma conta, dá o seguinte comando no banco de dados:
 DELETE FROM banco WHERE numero conta = ? and nome = ?
-esses parâmetros é para que exista uma consistência e segurança 
-maior do dados já que é necessário oferecer corretamente o nome
-do titular da conta junto do número que foi criado na conta (função 
+esses parâmetros são para que exista uma consistência e segurança 
+maior dos dados já que é necessário oferecer corretamente o nome
+do titular da conta junto do número da conta (função 
 "criar_conta").
 
  - REGISTRO ("salvar_movimentacoes"):
 
-Registra as operações de saque e depósito respectivamente com
+Registra as operações de Saque e Depósito respectivamente com
 as siglas "S" e "D".
 
 
