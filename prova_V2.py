@@ -2,8 +2,8 @@ from datetime import datetime
 import  mysql.connector
 #tabelas usadas
 tabelas = '''
-        create database BANCO_PROVA_FAP_v3;
-        use BANCO_PROVA_FAP_v3;
+        create database banco_prova_fap_v3;
+        use banco_prova_fap_v3;
         
         create table if not exists banco (
             id_cliente INT AUTO_INCREMENT ,
