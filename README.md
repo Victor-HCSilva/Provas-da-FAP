@@ -6,7 +6,7 @@ Este código implementa um sistema bancário simples usando Streamlit e MySQL pu
 
 1. Criar um banco de dados MySQL e tabelas.
 2. Criar um arquivo *.env* com as variáveis de ambiente necessárias para a conexão com o banco de dados.
-3. Instalar as dependências necessárias: *mmysql-connector-python*, *streamlit*, *dotenv*.
+3. Instalar as dependências necessárias: *mysql-connector-python*, *streamlit*, *dotenv*.
 
 ### Bibliotecas usadas:
 
