@@ -1,6 +1,6 @@
 ## Código: Sistema Bancário Simples 
 
-Este código implementa um sistema bancário simples usando Streamlit e MySQL puro sem ORM (object relational model). Ele permite aos usuários criar contas, fazer depósitos, saques, transferências e visualizar extratos. O código está dividido em três partes principais:
+Este código implementa um sistema bancário simples usando Streamlit e MySQL puro sem ORM (object relational model). Ele permite aos usuários criar contas, fazer depósitos, saques, transferências e visualizar extratos, para 'rodar' o código digite no terminal, dentro do repositório em que estiverem os arquivos: **streamlit run "main_streamlit.py"**. O código está dividido em três partes principais:
 
 **Para usar este sistema, você precisará:**
 
