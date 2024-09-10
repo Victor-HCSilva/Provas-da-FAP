@@ -111,7 +111,7 @@ saldo decimal(10,2)
 * O sistema é baseado em um banco de dados MySQL, que armazena as informações de conta e as movimentações dos usuários.
 * A segurança do sistema é limitada, pois as senhas são armazenadas em texto simples no banco de dados. É recomendável implementar mecanismos de criptografia para proteger as senhas.
 
-4. Executar o script Python.
+
 
 ##### Observação: Este código é apenas um exemplo básico. Para ter um sistema mais robusto e seguro é indicado:
 
