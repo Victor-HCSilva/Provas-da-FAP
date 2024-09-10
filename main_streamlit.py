@@ -1,5 +1,8 @@
-from _funcoes_ import *
-from func_saldo import _salario
+from _funcoes_ import (
+    conexao_ao_banco,encontrar_id,exibir_nome,extrato,st,load_dotenv,datetime,
+    os,_salario,verificar_senha,transacoes,transferencia,movimentacoes,
+    novo_numero,deletar,
+    )
 
 with open('estilo.css') as estilo:
     st.markdown(f'<style>{estilo.read()}</style>',unsafe_allow_html=True)
@@ -7,7 +10,7 @@ with open('estilo.css') as estilo:
 load_dotenv()
 def main():
     try:
-        st.title("Sistema Bancário simples 💸")
+        st.title("Banco-FAP💰")
         # Inicializa o estado de sessão para login
         if 'logado' not in st.session_state:
             st.session_state.logado = False
@@ -37,12 +40,19 @@ def main():
             else:
                 numero_da_conta = st.session_state.numero_da_conta
                 st.success(f"Bem-vindo, {exibir_nome(numero_da_conta)}")
-                
+                col1,col2=st.columns(2)
+                with col1:
+                    st.text(f'Saldo R${_salario(numero_da_conta)}')
+                    
+                with col2:
+                    #st.text(f'{exibir_nome(numero_da_conta)}')
+                    pass
+                                
                 opcao_conta = st.selectbox("Escolha uma operação", ["Depositar", "Sacar", "Extrato", "Transferência", "Deletar Conta","Sair"])
                 
                 # depositar
                 if opcao_conta == "Depositar":
-                    valor = st.number_input("Insira o valor que deseja depositar R$", min_value=0.0, step=0.01, placeholder='R$')
+                    valor = st.number_input("Insira o valor que deseja depositar R$", min_value=0.1, step=0.01, placeholder='R$')
                     
                     if st.button("Confirmar Depósito"):
                         if valor > 0:
@@ -76,7 +86,7 @@ def main():
                 # Transferencia
                 elif opcao_conta == "Transferência":
                     numero_do_beneficiado = st.number_input("Insira o número da conta beneficiada", min_value=0, step=1)
-                    valor = st.number_input("Insira o valor que deseja transferir", min_value=0.0, step=0.01)
+                    valor = st.number_input("Insira o valor que deseja transferir", min_value=0.1, step=0.01)
                     
                     if st.button("Confirmar Transferência"):
                         saldo_atual = _salario(numero_da_conta=numero_da_conta)
@@ -87,7 +97,6 @@ def main():
                                 ID = encontrar_id(numero_da_conta=numero_da_conta)
                                 movimentacoes(saldo=saldo, tipo_de_operacao='T', tipo_de_conta='conta_corrente', id_cliente=ID)
                                 
-                            
                         else:
                             st.error("Saldo insuficiente.")
                 
@@ -112,7 +121,7 @@ def main():
             st.subheader("Crie sua conta")
             nome = st.text_input("Nome Completo", placeholder='Insira seu nome')
             saldo_inicial = st.number_input("Depósito Inicial", min_value=0.0, step=0.01, placeholder='R$')
-            senha = st.text_input("Senha", type="password", placeholder='Apenas numeros inteiros')
+            senha = st.text_input("Crie uma Senha", type="password", placeholder='Apenas números')
             data =  str(datetime.now().date())
             tipo_de_conta = st.selectbox("Tipos de conta",["Conta corrente","Conta salário"])
             
@@ -140,10 +149,12 @@ def main():
             st.session_state.numero_da_conta = None
             st.text("Obrigado por usar o sistema bancário.")
             os.system('exit()')
+        
     except:
-        pass
-        st.error('por favor verifique se tudo foi preenchido corretamente', icon="🚨",)
+        e = Exception(st.error('por favor verifique se tudo foi preenchido corretamente', icon="⚠️",))
+        #st.exception(e)
         
 if __name__ == '__main__':
     load_dotenv()
     main()
+    #st.markdown('<t style="background-color:rgb(0,0,50);">Exemplo de sistema bancário simples</t>', unsafe_allow_html=True)
