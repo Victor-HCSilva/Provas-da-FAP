@@ -1,4 +1,4 @@
-from func_conexao_ao_banco import conexao_ao_banco
+from _funcoes_ import conexao_ao_banco
 
 def _salario(numero_da_conta: int):
     try:
