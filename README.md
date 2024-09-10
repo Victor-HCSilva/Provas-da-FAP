@@ -113,7 +113,7 @@ saldo decimal(10,2)
 
 
 
-##### Observação: Este código é apenas um exemplo básico. Para ter um sistema mais robusto e seguro é indicado:
+##### Atente-se: Este código é apenas um exemplo básico. Para ter um sistema mais robusto e seguro é indicado:
 
 * Criptografia de senhas;
 * Gerenciamento de múltiplos tipos de contas;
