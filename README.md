@@ -46,9 +46,9 @@ saldo decimal(10,2)
 ```
  - Python - Bibliotecas:
 ```
-print("Versão do Python",platform.python_version())#-->> 3.12.4
-print('Versão da biblioteca mysql.connector:', mysql.connector.__version__)#-->> mysql-connector-python -->>9.0.0
-print('versão do streamlit', st.__version__)#-->>1.32.0'
+pip install python==3.12.4
+pip install mysql-connector-python==9.0.0
+pip install streamlit==1.32.0
 ```
 
 **1. Funções auxiliares de conexão e lógica de banco de dados:**
