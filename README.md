@@ -21,7 +21,7 @@ pip install dotenv
 ```
 MySQL Workbench versão 8.0
 ```
-### Tabelas no MySQL usadas:
+- Tabelas no MySQL usadas:
 
 
 ```
